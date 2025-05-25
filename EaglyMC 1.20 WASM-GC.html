@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://eaglymc.com/web-wasm/ -->
+<html style="width:100%;height:100%;background-color:black;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="description" content="Play minecraft 1.8 in your browser">
+		<meta name="keywords" content="eaglercraft, eaglercraftx, minecraft, 1.8, 1.8.8">
+		<title>EaglyMC 1.20 WASM-GC</title>
+		<meta property="og:locale" content="en-US">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="EaglyMC 1.20 WASM-GC">
+		<meta property="og:description" content="Play minecraft 1.20(kinda) in your browser!">
+		<meta property="og:image" content="favicon.png">
+		<meta http-equiv="origin-trial" content="ArufsN6bHDz97+4j9RJ90oG9iY5GTukouinwK2v8XtR5DV2Gh1zojkwFJSk8auqgbsXuDKlIs6pzO3hz/uT9lQ4AAABkeyJvcmlnaW4iOiJodHRwczovL2VhZ2x5bWMuY29tOjQ0MyIsImZlYXR1cmUiOiJXZWJBc3NlbWJseUpTUHJvbWlzZUludGVncmF0aW9uIiwiZXhwaXJ5IjoxNzUzMTQyNDAwfQ==">
+		<link type="image/png" rel="shortcut icon" href="https://eaglymc.com/web-wasm/favicon.png">
+		<script type="text/javascript" src="./EaglyMC 1.20 WASM-GC_files/bootstrap.js.download"></script>
+		<script type="text/javascript">
+			"use strict";
+			window.addEventListener("load", function() {
+				if(window.location.href.indexOf("file:") === 0) {
+					alert("HTTP please, do not open this file locally, run a local HTTP server and load it via HTTP");
+				}else {
+					
+					// %%%%%%%%% launch options %%%%%%%%%%%%
+					
+					var relayId = Math.floor(Math.random() * 3);
+					window.eaglercraftXOpts = {
+						demoMode: false,
+						container: "game_frame",
+						assetsURI: "assets.epw",
+						worldsDB: "worlds",
+						servers: [
+							/* example: { addr: "ws://localhost:8081/", name: "Local test server" } */
+						],
+						relays: [
+							{ addr: "wss://relay.deev.is/", comment: "lax1dude relay #1", primary: relayId == 0 },
+							{ addr: "wss://relay.lax1dude.net/", comment: "lax1dude relay #2", primary: relayId == 1 },
+							{ addr: "wss://relay.shhnowisnottheti.me/", comment: "ayunami relay #1", primary: relayId == 2 }
+						]
+					};
+					
+					// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+					
+					var q = window.location.search;
+					if((typeof q === "string") && q[0] === "?" && (typeof window.URLSearchParams !== "undefined")) {
+						q = new window.URLSearchParams(q);
+						var s = q.get("server");
+						if(s) window.eaglercraftXOpts.joinServer = s;
+					}
+					
+					main();
+					
+				}
+			});
+		</script>
+	<script type="text/javascript" src="blob:https://eaglymc.com/f20f9551-66c9-4e00-9f36-57aff73f1fdb"></script><script type="text/javascript" src="blob:https://eaglymc.com/3f5a1d47-ba7c-4b20-844f-fb9ccb427dce"></script></head>
+	<body style="margin:0px;width:100%;height:100%;overflow:hidden;background-color:black;" id="game_frame" class="_eaglercraftX_root_element"><div class="_eaglercraftX_wrapper_element" style="position: relative; width: 100%; height: 100%; overflow: hidden; background-color: black;"><div class="_eaglercraftX_early_splash_element" style="width: 100%; height: 100%; image-rendering: pixelated; background: url(&quot;blob:https://eaglymc.com/19610099-3203-4abd-aebf-43842005cd2e&quot;) center center / contain no-repeat, url(&quot;blob:https://eaglymc.com/19610099-3203-4abd-aebf-43842005cd2e&quot;) 0px 0px / 1e+06% 1e+06% no-repeat white; position: absolute; inset: 0px; z-index: 2;"></div><div class="_eaglercraftX_press_any_key_image" style="position: absolute; inset: 0px; width: 100%; height: 100%; z-index: 3; touch-action: pan-x pan-y; background: url(&quot;blob:https://eaglymc.com/4f68d1b4-819c-4c30-ac96-4cda2830dbb7&quot;) center center / contain no-repeat, url(&quot;blob:https://eaglymc.com/4f68d1b4-819c-4c30-ac96-4cda2830dbb7&quot;) left center / 1e+06% 100% no-repeat white; image-rendering: pixelated;"></div></div></body></html>
